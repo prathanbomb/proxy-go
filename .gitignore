@@ -1,0 +1,53 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# Go workspace file
+go.work
+
+# Dependency directories
+vendor/
+
+# IntelliJ IDEA project files
+.idea/
+*.iml
+
+# CMake build directories
+cmake-build-*/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*.bak
+
+# Crashlytics plugin files
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# Editor-based Rest Client
+.idea/httpRequests
+
+# Android Studio cache
+.idea/caches/build_file_checksums.ser
+
+# General IDE output directories
+out/
+
+# Build artifacts
+proxy
+
+# Docker-related files
+docker-compose.override.yml
+
+# IDE-specific files
+.vscode/
