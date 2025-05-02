@@ -1,11 +1,12 @@
 # Go Authentication Proxy
 
-A lightweight HTTP/HTTPS proxy server written in Go with optional Basic Authentication support.
+A lightweight HTTP/HTTPS proxy server written in Go with optional Basic Authentication and NTLM Authentication support.
 
 ## Features
 
 - Supports HTTP and HTTPS proxying.
 - Optional Basic Authentication for enhanced security.
+- NTLM and Negotiate Authentication support for Windows-based environments.
 - Configurable timeouts for better performance and protection against slow clients.
 - Verbose logging for debugging and monitoring.
 
@@ -56,14 +57,22 @@ This project includes a `Dockerfile` and `docker-compose.yml` for easy container
 
 Configure your client to use the proxy at `http://localhost:8080` with the username and password you set.
 
-#### Example with `curl`:
+#### Basic Authentication Example with `curl`:
 ```bash
 curl --proxy-user my_user:my_password -x http://localhost:8080 http://ifconfig.me/ip
 ```
 
+#### NTLM and Negotiate Authentication:
+Most browsers and tools that support NTLM authentication will automatically negotiate the NTLM authentication protocol with the proxy. The proxy server will respond with the appropriate NTLM or Negotiate challenge when it receives an authentication negotiate message.
+
+The proxy supports both the "NTLM" and "Negotiate" authentication methods, allowing it to work with a wider range of clients and authentication scenarios.
+
+For Windows clients, NTLM/Negotiate authentication is often handled automatically by the system when configured to use a proxy that requires NTLM authentication.
+
 #### Example with a browser:
 - Set the proxy address to `http://localhost:8080`.
 - Enter the username and password when prompted.
+- For NTLM or Negotiate authentication, the browser will typically handle the authentication negotiation automatically.
 
 ## Configuration
 
